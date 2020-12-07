@@ -85,11 +85,8 @@ module.exports = {
             tvShowSearched: name,
             date: new Date(),
             responseFrom: "API",
-          })
-        })
-       
-        
-        
+          });
+        });
     } catch (err) {
       res.status(401).send({
         error: err,
