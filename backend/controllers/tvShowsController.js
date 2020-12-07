@@ -80,15 +80,16 @@ module.exports = {
             updated,
             _links,
           });
-        })
-       /*  .then(
           RequestLog.create({
             ip: ip.split(":").pop(),
             tvShowSearched: name,
             date: new Date(),
             responseFrom: "API",
           })
-        ); */
+        })
+       
+        
+        
     } catch (err) {
       res.status(401).send({
         error: err,
