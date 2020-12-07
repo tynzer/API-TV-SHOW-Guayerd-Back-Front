@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NavBar from "./components/NavBar";
+import Search from "./components/Search";
+import TvShow from "./components/TvShow";
 
-function App() {
+const App = () => {
+  const [tvShowInfo, setTvShowInfo] = useState("");
+
+  const srcTvShowInfo = (srcTvShowInfo) => {
+    setTvShowInfo(srcTvShowInfo);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar></NavBar>
+      <Search srcTvShowInfo={srcTvShowInfo}></Search>
+      <TvShow sendTvShowInfo={tvShowInfo}></TvShow>
     </div>
   );
-}
+};
 
 export default App;
